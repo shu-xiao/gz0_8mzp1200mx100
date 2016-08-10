@@ -22,7 +22,7 @@ void plot()
     setNCUStyle();
 	
     TCanvas *c1 = new TCanvas("c1","",900,700);
-	TLegend* leg = new TLegend(0.75,0.65,0.9,0.85);
+	TLegend* leg = new TLegend(0.7,0.6,0.9,0.82);
     
     TFile *f_mzp1 = TFile::Open("MonoHFatJetSelection_JetAndLeptonVeto.root");
     //TFile *f_mzp2 = TFile::Open("500MA0.root"); //old
@@ -38,15 +38,6 @@ void plot()
     TH1F* h_A0m4 = (TH1F*)f_mzp1->Get("monoHbbM1200_600");
     TH1F* h_A0m5 = (TH1F*)f_mzp1->Get("monoHbbM1200_700");
     TH1F* h_A0m6 = (TH1F*)f_mzp1->Get("monoHbbM1200_800");
-
-    h_A0m1->SetAxisRange(0,5000,"X");
-    h_A0m2->SetAxisRange(0,5000,"X");
-    h_A0m3->SetAxisRange(0,5000,"X");
-    h_A0m4->SetAxisRange(0,5000,"X");
-    h_A0m5->SetAxisRange(0,5000,"X");
-    h_A0m6->SetAxisRange(0,5000,"X");
-
-
 //dR(bb):h_D_dR0
 //PT(A0): h_Bpt1
 //PT(H): h_Bpt0
@@ -92,13 +83,22 @@ void plot()
     h_A0m6->GetXaxis()->SetRangeUser(0.,5000.);
 */
 /*
-    h_A0m1->GetXaxis()->SetMinimum(0);
-    h_A0m2->GetXaxis()->SetMinimum(0);
-    h_A0m3->GetXaxis()->SetMinimum(0);
-    h_A0m4->GetXaxis()->SetMinimum(0);
-    h_A0m5->GetXaxis()->SetMinimum(0);
-    h_A0m6->GetXaxis()->SetMinimum(0);
+    h_A0m1->GetXaxis()->SetLimits(0.,5000.);
+    h_A0m2->GetXaxis()->SetLimits(0.,5000.);
+    h_A0m3->GetXaxis()->SetLimits(0.,5000.);
+    h_A0m4->GetXaxis()->SetLimits(0.,5000.);
+    h_A0m5->GetXaxis()->SetLimits(0.,5000.);
+    h_A0m6->GetXaxis()->SetLimits(0.,5000.);
 */
+    h_A0m1->SetAxisRange(0,5000,"X");
+    h_A0m2->SetAxisRange(0,5000,"X");
+    h_A0m3->SetAxisRange(0,5000,"X");
+    h_A0m4->SetAxisRange(0,5000,"X");
+    h_A0m5->SetAxisRange(0,5000,"X");
+    h_A0m6->SetAxisRange(0,5000,"X");
+
+
+
     h_A0m1->GetXaxis()->SetTitleFont(22);
     h_A0m1->GetYaxis()->SetTitleFont(22);
     h_A0m2->GetXaxis()->SetLabelFont(22);
@@ -124,14 +124,14 @@ void plot()
     h_A0m5->GetYaxis()->SetLabelSize(0.045);
     h_A0m6->GetXaxis()->SetLabelSize(0.045);
     h_A0m6->GetYaxis()->SetLabelSize(0.045);
-/*
+
     h_A0m1->GetYaxis()->SetTitleOffset(1.45);
     h_A0m2->GetYaxis()->SetTitleOffset(1.45);
     h_A0m3->GetYaxis()->SetTitleOffset(1.45);   
     h_A0m4->GetYaxis()->SetTitleOffset(1.45);
     h_A0m5->GetYaxis()->SetTitleOffset(1.45);
     h_A0m6->GetYaxis()->SetTitleOffset(1.45);
-*/
+
     h_A0m1->SetLineWidth(2);
     h_A0m2->SetLineWidth(2);
     h_A0m3->SetLineWidth(2);
@@ -143,11 +143,11 @@ void plot()
     // h_A0m1->GetYaxis()->SetRange(0,700);
     // h_A0m2->GetYaxis()->SetRange(0,700);
     // h_A0m3->GetYaxis()->SetRange(0,700);
-    h_A0m3->GetYaxis()->SetTitle("Normalized to 1");
-    h_A0m3->GetYaxis()->SetTitleSize(0.04);
-    h_A0m3->GetYaxis()->CenterTitle();
-    h_A0m3->GetXaxis()->SetTitle("E_{T}^{miss}");
-    h_A0m3->GetXaxis()->SetTitleSize(0.04);
+    h_A0m1->GetYaxis()->SetTitle("Normalized to 1");
+    h_A0m1->GetYaxis()->SetTitleSize(0.04);
+    h_A0m1->GetYaxis()->CenterTitle();
+    h_A0m1->GetXaxis()->SetTitle("E_{T}^{miss}");
+    h_A0m1->GetXaxis()->SetTitleSize(0.04);
     //h_A0m3->GetXaxis()->CenterTitle();
    
     // h_A0m5->GetYaxis()->SetRange(0,700);
@@ -160,15 +160,15 @@ void plot()
     h_A0m5->Draw("histsame");
     h_A0m6->Draw("histsame");
 
-
-    h_A0m2->SetLineColor(4);
+    h_A0m5->SetLineColor(11);
+    h_A0m5->SetFillColor(98);
+    h_A0m5->SetFillStyle(3022);
+    h_A0m1->SetLineColor(79);
     //h_A0m2->SetFillStyle(3004);
-    h_A0m1->SetLineColor(2);
-    h_A0m3->SetLineColor(6);
+    h_A0m2->SetLineColor(2);
+    h_A0m3->SetLineColor(92);
     h_A0m4->SetLineColor(1);
-    h_A0m5->SetLineColor(5);
-    h_A0m6->SetLineColor(81);
-
+    h_A0m6->SetLineColor(51);
 
 
     leg->AddEntry(h_A0m1,"M_{A_{0}} = 300 GeV");
@@ -191,7 +191,7 @@ void plot()
     Tl.SetNDC(kTRUE); 
     Tl.SetTextAlign(22);
     Tl.DrawLatex(0.5,0.96,latexCMSname);
-    Tl.DrawLatex(0.8,0.6,latexCMSname2);
-    Tl.DrawLatex(0.8, 0.53,latexCMSname3);
-    Tl.DrawLatex(0.8, 0.47, latexCMSname4);
+    Tl.DrawLatex(0.8,0.5,latexCMSname2);
+    Tl.DrawLatex(0.8, 0.43,latexCMSname3);
+    Tl.DrawLatex(0.8, 0.37, latexCMSname4);
 }
