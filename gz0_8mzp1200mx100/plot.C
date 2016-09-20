@@ -145,9 +145,9 @@ void plot()
     h_A0m1->Draw("histsame");
     //h_A0m6->Draw("histsame");
 
-    leg->AddEntry(h_A0m1,"m_{Z'} = 1200 GeV, m_{#chi} = 300 GeV");
-    leg->AddEntry(h_A0m2,"m_{Z'} = 1200 GeV, m_{#chi} = 500 GeV");
-    leg->AddEntry(h_A0m3,"m_{Z'} = 1200 GeV, m_{#chi} = 700 GeV");
+    leg->AddEntry(h_A0m1,"#bf{m_{Z'} = 1200 GeV, m_{#chi} = 300 GeV}");
+    leg->AddEntry(h_A0m2,"#bf{m_{Z'} = 1200 GeV, m_{#chi} = 500 GeV}");
+    leg->AddEntry(h_A0m3,"#bf{m_{Z'} = 1200 GeV, m_{#chi} = 700 GeV}");
     //leg->AddEntry(h_A0m4,"MZ'_600GeV,MA0_700GeV");
     //leg->AddEntry(h_A0m5,"MZ'_600GeV,MA0_800GeV");
     //leg->AddEntry(h_A0m6,"MZ'_1400GeV,DM_100GeV");
