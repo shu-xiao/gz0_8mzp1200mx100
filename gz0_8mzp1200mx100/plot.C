@@ -22,7 +22,7 @@ void plot()
     setNCUStyle();
 	
     TCanvas *c1 = new TCanvas("c1","ma0",900,700);
-	TLegend* leg = new TLegend(0.7,0.75,0.92,0.88);
+	TLegend* leg = new TLegend(0.58,0.75,0.92,0.88);
     
     TFile *f_mzp1 = TFile::Open("300MA0.root"); //dm=10
     TFile *f_mzp2 = TFile::Open("500MA0.root"); //old
@@ -126,7 +126,7 @@ void plot()
     // h_A0m1->GetYaxis()->SetRange(0,700);
     // h_A0m2->GetYaxis()->SetRange(0,700);
     // h_A0m3->GetYaxis()->SetRange(0,700);
-    h_A0m3->GetYaxis()->SetTitle("#bf{Normalized to 1}");
+    h_A0m3->GetYaxis()->SetTitle("#bf{arbirary units}");
     h_A0m3->GetYaxis()->SetTitleSize(0.04);
     //h_A0m3->GetYaxis()->CenterTitle();
     h_A0m3->GetXaxis()->SetTitle("#bf{E}_{T}^{miss}#bf{(GeV)}");
@@ -145,9 +145,9 @@ void plot()
     h_A0m1->Draw("histsame");
     //h_A0m6->Draw("histsame");
 
-    leg->AddEntry(h_A0m1,"M_{A0} = 300 GeV");
-    leg->AddEntry(h_A0m2,"M_{A0} = 500 GeV");
-    leg->AddEntry(h_A0m3,"M_{A0} = 700 GeV");
+    leg->AddEntry(h_A0m1,"m_{Z'} = 1200 GeV, m_{#chi} = 300 GeV");
+    leg->AddEntry(h_A0m2,"m_{Z'} = 1200 GeV, m_{#chi} = 500 GeV");
+    leg->AddEntry(h_A0m3,"m_{Z'} = 1200 GeV, m_{#chi} = 700 GeV");
     //leg->AddEntry(h_A0m4,"MZ'_600GeV,MA0_700GeV");
     //leg->AddEntry(h_A0m5,"MZ'_600GeV,MA0_800GeV");
     //leg->AddEntry(h_A0m6,"MZ'_1400GeV,DM_100GeV");
@@ -158,16 +158,16 @@ void plot()
     c1->Update();
     // Latex
     TString latexCMSname= "13 TeV";
-    TString latexCMSname2= "Z' #rightarrow A_{0} + H";
-    TString latexCMSname3= "g_{Z} = 0.8, M_{Z'} = 1200 GeV";
-    TString latexCMSname4= "tan#beta = 1, M_{#chi} = 100 GeV";
+    TString latexCMSname2= "Z' #rightarrow DM + H(b#bar{b})";
+    TString latexCMSname3= "g_{Z} = 0.8, m_{Z'} = 1200 GeV";
+    TString latexCMSname4= "tan#beta = 1, m_{#chi} = 100 GeV";
     TString latexCMSname5= "CMS #bf{#it{Simulation Preliminary}}";
     TLatex Tl; Tl.SetTextFont(62); Tl.SetTextSize(0.03); 
     Tl.SetNDC(kTRUE); 
     Tl.SetTextAlign(12);
     Tl.DrawLatex(0.82,0.945,latexCMSname);
     Tl.DrawLatex(0.2,0.8,latexCMSname2);
-    Tl.DrawLatex(0.2, 0.75,latexCMSname3);
-    Tl.DrawLatex(0.2, 0.7, latexCMSname4);
+   // Tl.DrawLatex(0.2, 0.75,"m_{Z'} = 1200 GeV");
+    //Tl.DrawLatex(0.2, 0.7, latexCMSname4);
     Tl.DrawLatex(0.2, 0.85, latexCMSname5);
 }
