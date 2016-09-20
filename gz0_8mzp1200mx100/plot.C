@@ -22,7 +22,7 @@ void plot()
     setNCUStyle();
 	
     TCanvas *c1 = new TCanvas("c1","ma0",900,700);
-	TLegend* leg = new TLegend(0.2,0.7,0.5,0.85);
+	TLegend* leg = new TLegend(0.7,0.75,0.92,0.88);
     
     TFile *f_mzp1 = TFile::Open("300MA0.root"); //dm=10
     TFile *f_mzp2 = TFile::Open("500MA0.root"); //old
@@ -69,10 +69,15 @@ void plot()
     //h_A0m5->Sumw2();
     //h_A0m6->Sumw2();
 
+    h_A0m2->SetFillColor(4);
     h_A0m2->SetLineColor(4);
-    //h_A0m2->SetFillStyle(3004);
+    h_A0m2->SetFillStyle(3014);
+    h_A0m1->SetFillColor(2);
     h_A0m1->SetLineColor(2);
+    h_A0m1->SetFillStyle(3014);
+    h_A0m3->SetFillColor(6);
     h_A0m3->SetLineColor(6);
+    h_A0m3->SetFillStyle(3014);
     //h_A0m4->SetLineColor(1);
     //h_A0m5->SetLineColor(5);
     //h_A0m6->SetFillColor(81);
@@ -121,14 +126,14 @@ void plot()
     // h_A0m1->GetYaxis()->SetRange(0,700);
     // h_A0m2->GetYaxis()->SetRange(0,700);
     // h_A0m3->GetYaxis()->SetRange(0,700);
-    h_A0m3->GetYaxis()->SetTitle("Normalized to 1");
+    h_A0m3->GetYaxis()->SetTitle("#bf{Normalized to 1}");
     h_A0m3->GetYaxis()->SetTitleSize(0.04);
-    h_A0m3->GetYaxis()->CenterTitle();
-    h_A0m3->GetXaxis()->SetTitle("E_{T}^{miss}");
+    //h_A0m3->GetYaxis()->CenterTitle();
+    h_A0m3->GetXaxis()->SetTitle("#bf{E}_{T}^{miss}#bf{(GeV)}");
     h_A0m3->GetXaxis()->SetTitleSize(0.04);
     //h_A0m3->GetXaxis()->CenterTitle();
     h_A0m3->SetAxisRange(0,700,"X");
-    h_A0m3->SetAxisRange(0,0.25,"y");
+    h_A0m3->SetAxisRange(0,0.3,"y");
     
     // h_A0m5->GetYaxis()->SetRange(0,700);
     // h_A0m6->GetYaxis()->SetRange(0,700); 
@@ -136,13 +141,13 @@ void plot()
     h_A0m3->Draw("hist");        
     //h_A0m5->Draw("histsame");
     //h_A0m4->Draw("histsame"); 
-    h_A0m1->Draw("histsame");
     h_A0m2->Draw("histsame");
+    h_A0m1->Draw("histsame");
     //h_A0m6->Draw("histsame");
 
-    leg->AddEntry(h_A0m1,"M_{A_{0}} = 300 GeV");
-    leg->AddEntry(h_A0m2,"M_{A_{0}} = 500 GeV");
-    leg->AddEntry(h_A0m3,"M_{A_{0}} = 700 GeV");
+    leg->AddEntry(h_A0m1,"M_{A0} = 300 GeV");
+    leg->AddEntry(h_A0m2,"M_{A0} = 500 GeV");
+    leg->AddEntry(h_A0m3,"M_{A0} = 700 GeV");
     //leg->AddEntry(h_A0m4,"MZ'_600GeV,MA0_700GeV");
     //leg->AddEntry(h_A0m5,"MZ'_600GeV,MA0_800GeV");
     //leg->AddEntry(h_A0m6,"MZ'_1400GeV,DM_100GeV");
@@ -152,15 +157,17 @@ void plot()
 
     c1->Update();
     // Latex
-    TString latexCMSname= "CMS Simulation Preliminary #sqrt{s} = 13 TeV";
+    TString latexCMSname= "13 TeV";
     TString latexCMSname2= "Z' #rightarrow A_{0} + H";
     TString latexCMSname3= "g_{Z} = 0.8, M_{Z'} = 1200 GeV";
     TString latexCMSname4= "tan#beta = 1, M_{#chi} = 100 GeV";
-    TLatex Tl; Tl.SetTextFont(72); Tl.SetTextSize(0.04); 
+    TString latexCMSname5= "CMS #bf{#it{Simulation Preliminary}}";
+    TLatex Tl; Tl.SetTextFont(62); Tl.SetTextSize(0.03); 
     Tl.SetNDC(kTRUE); 
-    Tl.SetTextAlign(22);
-    Tl.DrawLatex(0.51,0.96,latexCMSname);
-    Tl.DrawLatex(0.31,0.6,latexCMSname2);
-    Tl.DrawLatex(0.33, 0.53,latexCMSname3);
-    Tl.DrawLatex(0.33, 0.47, latexCMSname4);
+    Tl.SetTextAlign(12);
+    Tl.DrawLatex(0.82,0.945,latexCMSname);
+    Tl.DrawLatex(0.2,0.8,latexCMSname2);
+    Tl.DrawLatex(0.2, 0.75,latexCMSname3);
+    Tl.DrawLatex(0.2, 0.7, latexCMSname4);
+    Tl.DrawLatex(0.2, 0.85, latexCMSname5);
 }
