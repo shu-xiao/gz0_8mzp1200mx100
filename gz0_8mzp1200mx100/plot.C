@@ -161,7 +161,7 @@ void plot()
     TString latexCMSname2= "Z' #rightarrow DM + H(b#bar{b})";
     TString latexCMSname3= "g_{Z} = 0.8, m_{Z'} = 1200 GeV";
     TString latexCMSname4= "tan#beta = 1, m_{#chi} = 100 GeV";
-    TString latexCMSname5= "CMS #bf{#it{Simulation Preliminary}}";
+    TString latexCMSname5= "CMS #bf{#it{Simulation}}";
     TLatex Tl; Tl.SetTextFont(62); Tl.SetTextSize(0.03); 
     Tl.SetNDC(kTRUE); 
     Tl.SetTextAlign(12);
