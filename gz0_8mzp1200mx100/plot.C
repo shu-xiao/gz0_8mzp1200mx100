@@ -170,7 +170,7 @@ void plot()
     TString latexCMSname3= "g_{Z} = 0.8, m_{Z'} = 1200 GeV";
     TString latexCMSname4= "tan#beta = 1, m_{#chi} = 100 GeV";
     TString latexCMSname5= "#it{Simulation}";
-    TLatex Tl; Tl.SetTextFont(42); Tl.SetTextSize(0.04); 
+    TLatex Tl; Tl.SetTextFont(42); Tl.SetTextSize(0.045); 
     Tl.SetNDC(kTRUE); 
     Tl.SetTextAlign(11);
     Tl.DrawLatex(0.86,0.945,latexCMSname);
