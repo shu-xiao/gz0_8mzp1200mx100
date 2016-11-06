@@ -22,7 +22,7 @@ void plot()
     setNCUStyle();
 	
     TCanvas *c1 = new TCanvas("c1","ma0",900,700);
-	TLegend* leg = new TLegend(0.4,0.73,0.92,0.89);
+    TLegend* leg = new TLegend(0.4,0.73,0.92,0.89);
 
     TFile *f_mzp1 = TFile::Open("300MA0.root"); //dm=10
     TFile *f_mzp2 = TFile::Open("500MA0.root"); //old
@@ -103,12 +103,12 @@ void plot()
     h_A0m3->GetYaxis()->SetLabelFont(42);
 
 
-    h_A0m1->GetXaxis()->SetTitleSize(0.02);
-    h_A0m1->GetYaxis()->SetTitleSize(0.02);  
-    h_A0m2->GetXaxis()->SetLabelSize(0.02);
-    h_A0m2->GetYaxis()->SetLabelSize(0.02);
-    h_A0m3->GetXaxis()->SetLabelSize(0.05);
-    h_A0m3->GetYaxis()->SetLabelSize(0.05);
+    h_A0m1->GetXaxis()->SetTitleSize(0.04);
+    h_A0m1->GetYaxis()->SetTitleSize(0.04);  
+    h_A0m2->GetXaxis()->SetLabelSize(0.04);
+    h_A0m2->GetYaxis()->SetLabelSize(0.04);
+    h_A0m3->GetXaxis()->SetLabelSize(0.055);
+    h_A0m3->GetYaxis()->SetLabelSize(0.055);
     //h_A0m4->GetXaxis()->SetLabelSize(0.045);
     //h_A0m4->GetYaxis()->SetLabelSize(0.045);
     //h_A0m5->GetXaxis()->SetLabelSize(0.045);
@@ -116,9 +116,9 @@ void plot()
     //h_A0m6->GetXaxis()->SetLabelSize(0.045);
     //h_A0m6->GetYaxis()->SetLabelSize(0.045);
 
-    h_A0m1->GetYaxis()->SetTitleOffset(1.45);
-    h_A0m2->GetYaxis()->SetTitleOffset(1.45);
-    h_A0m3->GetYaxis()->SetTitleOffset(1.45);   
+    h_A0m1->GetYaxis()->SetTitleOffset(1.2);
+    h_A0m2->GetYaxis()->SetTitleOffset(1.2);
+    h_A0m3->GetYaxis()->SetTitleOffset(1.2);   
     //h_A0m4->GetYaxis()->SetTitleOffset(1.45);
     //h_A0m5->GetYaxis()->SetTitleOffset(1.45);
     //h_A0m6->GetYaxis()->SetTitleOffset(1.45);
@@ -135,10 +135,10 @@ void plot()
     // h_A0m2->GetYaxis()->SetRange(0,700);
     // h_A0m3->GetYaxis()->SetRange(0,700);
     h_A0m3->GetYaxis()->SetTitle("arbirary units");
-    h_A0m3->GetYaxis()->SetTitleSize(0.05);
+    h_A0m3->GetYaxis()->SetTitleSize(0.055);
     //h_A0m3->GetYaxis()->CenterTitle();
     h_A0m3->GetXaxis()->SetTitle("E_{T}^{miss} [GeV]");
-    h_A0m3->GetXaxis()->SetTitleSize(0.05);
+    h_A0m3->GetXaxis()->SetTitleSize(0.055);
     //h_A0m3->GetXaxis()->CenterTitle();
     h_A0m3->SetAxisRange(0,700,"X");
     h_A0m3->SetAxisRange(0,0.3,"y");
