@@ -82,12 +82,12 @@ void plot()
     //h_A0m5->SetLineColor(5);
     //h_A0m6->SetFillColor(81);
 
-    h_A0m1->GetXaxis()->SetTitleFont(22);
-    h_A0m1->GetYaxis()->SetTitleFont(22);
-    h_A0m2->GetXaxis()->SetLabelFont(22);
-    h_A0m2->GetYaxis()->SetLabelFont(22);
-    h_A0m3->GetXaxis()->SetLabelFont(22);
-    h_A0m3->GetYaxis()->SetLabelFont(22);
+    h_A0m1->GetXaxis()->SetTitleFont(42);
+    h_A0m1->GetYaxis()->SetTitleFont(42);
+    h_A0m2->GetXaxis()->SetTitleFont(42);
+    h_A0m2->GetYaxis()->SetTitleFont(42);
+    h_A0m3->GetXaxis()->SetTitleFont(42);
+    h_A0m3->GetYaxis()->SetTitleFont(42);
     //h_A0m4->GetXaxis()->SetLabelFont(22);
     //h_A0m4->GetYaxis()->SetLabelFont(22);
     //h_A0m5->GetXaxis()->SetLabelFont(22);
@@ -95,12 +95,20 @@ void plot()
     //h_A0m6->GetXaxis()->SetLabelFont(22);
     //h_A0m6->GetYaxis()->SetLabelFont(22);
 
-    h_A0m1->GetXaxis()->SetTitleSize(0.045);
-    h_A0m1->GetYaxis()->SetTitleSize(0.045);  
-    h_A0m2->GetXaxis()->SetLabelSize(0.045);
-    h_A0m2->GetYaxis()->SetLabelSize(0.045);
-    h_A0m3->GetXaxis()->SetLabelSize(0.045);
-    h_A0m3->GetYaxis()->SetLabelSize(0.045);
+    h_A0m1->GetXaxis()->SetLabelFont(42);
+    h_A0m1->GetYaxis()->SetLabelFont(42);
+    h_A0m2->GetXaxis()->SetLabelFont(42);
+    h_A0m2->GetYaxis()->SetLabelFont(42);
+    h_A0m3->GetXaxis()->SetLabelFont(42);
+    h_A0m3->GetYaxis()->SetLabelFont(42);
+
+
+    h_A0m1->GetXaxis()->SetTitleSize(0.02);
+    h_A0m1->GetYaxis()->SetTitleSize(0.02);  
+    h_A0m2->GetXaxis()->SetLabelSize(0.02);
+    h_A0m2->GetYaxis()->SetLabelSize(0.02);
+    h_A0m3->GetXaxis()->SetLabelSize(0.038);
+    h_A0m3->GetYaxis()->SetLabelSize(0.038);
     //h_A0m4->GetXaxis()->SetLabelSize(0.045);
     //h_A0m4->GetYaxis()->SetLabelSize(0.045);
     //h_A0m5->GetXaxis()->SetLabelSize(0.045);
@@ -126,10 +134,10 @@ void plot()
     // h_A0m1->GetYaxis()->SetRange(0,700);
     // h_A0m2->GetYaxis()->SetRange(0,700);
     // h_A0m3->GetYaxis()->SetRange(0,700);
-    h_A0m3->GetYaxis()->SetTitle("#bf{arbirary units}");
+    h_A0m3->GetYaxis()->SetTitle("arbirary units");
     h_A0m3->GetYaxis()->SetTitleSize(0.04);
     //h_A0m3->GetYaxis()->CenterTitle();
-    h_A0m3->GetXaxis()->SetTitle("#bf{E}_{T}^{miss}#bf{(GeV)}");
+    h_A0m3->GetXaxis()->SetTitle("E_{T}^{miss} [GeV]");
     h_A0m3->GetXaxis()->SetTitleSize(0.04);
     //h_A0m3->GetXaxis()->CenterTitle();
     h_A0m3->SetAxisRange(0,700,"X");
@@ -145,9 +153,9 @@ void plot()
     h_A0m1->Draw("histsame");
     //h_A0m6->Draw("histsame");
 
-    leg->AddEntry(h_A0m1,"#bf{m_{Z'} = 1200 GeV, m_{A0} = 300 GeV}");
-    leg->AddEntry(h_A0m2,"#bf{m_{Z'} = 1200 GeV, m_{A0} = 500 GeV}");
-    leg->AddEntry(h_A0m3,"#bf{m_{Z'} = 1200 GeV, m_{A0} = 700 GeV}");
+    leg->AddEntry(h_A0m1,"m_{Z'} = 1200 GeV, m_{A0} = 300 GeV");
+    leg->AddEntry(h_A0m2,"m_{Z'} = 1200 GeV, m_{A0} = 500 GeV");
+    leg->AddEntry(h_A0m3,"m_{Z'} = 1200 GeV, m_{A0} = 700 GeV");
     //leg->AddEntry(h_A0m4,"MZ'_600GeV,MA0_700GeV");
     //leg->AddEntry(h_A0m5,"MZ'_600GeV,MA0_800GeV");
     //leg->AddEntry(h_A0m6,"MZ'_1400GeV,DM_100GeV");
@@ -158,16 +166,18 @@ void plot()
     c1->Update();
     // Latex
     TString latexCMSname= "13 TeV";
-    TString latexCMSname2= "Z' #rightarrow DM + H(b#bar{b})";
+    TString latexCMSname2= "Z' #rightarrow DM + H";
     TString latexCMSname3= "g_{Z} = 0.8, m_{Z'} = 1200 GeV";
     TString latexCMSname4= "tan#beta = 1, m_{#chi} = 100 GeV";
-    TString latexCMSname5= "CMS #bf{#it{Simulation}}";
-    TLatex Tl; Tl.SetTextFont(62); Tl.SetTextSize(0.03); 
+    TString latexCMSname5= "#it{Simulation}";
+    TLatex Tl; Tl.SetTextFont(42); Tl.SetTextSize(0.03); 
     Tl.SetNDC(kTRUE); 
-    Tl.SetTextAlign(12);
-    Tl.DrawLatex(0.82,0.945,latexCMSname);
-    Tl.DrawLatex(0.2,0.8,latexCMSname2);
+    Tl.SetTextAlign(11);
+    Tl.DrawLatex(0.88,0.945,latexCMSname);
+    Tl.DrawLatex(0.17,0.8,latexCMSname2);
    // Tl.DrawLatex(0.2, 0.75,"m_{Z'} = 1200 GeV");
     //Tl.DrawLatex(0.2, 0.7, latexCMSname4);
-    Tl.DrawLatex(0.2, 0.85, latexCMSname5);
+    Tl.DrawLatex(0.23, 0.85, latexCMSname5);
+    Tl.SetTextFont(61);
+    Tl.DrawLatex(0.17, 0.85, "CMS");
 }
